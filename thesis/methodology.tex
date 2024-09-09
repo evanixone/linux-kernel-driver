@@ -1,0 +1,32 @@
+\chapter{Methods}
+This chapters will describe briefly the approach for researches and software development. By the end of this chapter, developer should have an idea on how to recreate this project.
+
+\section{Methodology}
+Before digging into programming, there are several phases must be accomplished so that mistakes in the Program can be minimized. These phases are 
+\begin{enumerate}
+	\item research
+	\item setting up working environment
+	\item writing codes and testing
+\end{enumerate}
+
+\subsection{Research}
+Research part play a vital role before starting to program so that we have a clear idea how to develop the program. Since my supervisor provide an unknown display for me to use in the project, I must find out the information about the display myself by looking out the manufacturer website for the product. Then after finding out the display to SH1107 128x128 type, I look out for related datasheet. The datasheet for the sensor TMP102 is relatively easy to be found. \\
+Moreover, I need to get documentation to program the Linux driver which can be found in its website. The website provide a thorough explanation in their examples.\\
+While the working principle of the TMP102 is simple, it is not the same for SH1107. As reference, several Github repositories need to be visited to give me a clear view how a display driver should be like.
+
+\subsection{Setting up working environment}
+Due to the reason that the hardware is connected to Raspberry Pi, the software must also be written in raspberry pi to allow easier debugging and testing. Due to limited RAM of the Raspberry Pi, Geany Text editor is recommended. A new project in Gitlab is created and clone to local folder. Inside the project folder, three C files are created for TMP102 driver, SH1107 driver, User Space app respectively.
+
+\subsection{Writing codes and testing}
+A list of features of the driver must be prepared beforehand so that the development runs smoothly. The process of writing and testing or so called ``try and error'' must be repeated several times until a satisfied product is achieved. The project follows an agile life cycle which is suitable for small project as this.
+
+\section{Challenges}
+Although the software project finished on time it does not reached my satisfactory level of how the product would works. This is due to several factors that I am having such as following:
+\begin{itemize}
+	\item Lack of time. The driver muss be completed within a month.
+	\item Lack of experience. This is my first experience writing a linux driver.
+	\item Limited of example of SH1107 driver. There are no example of 128x128 SH1107 display exist in internet yet.
+\end{itemize}
+
+Furthermore, there is a problem faced by me on writing float value in driver code since Linux kernel cannot actually process float value. This is a problem since the TMP102 driver is meant to return a string value of temperature in float. A better solution might be that the data should be return to user space app in integer and should be converted to float in the app.\\
+The decision to make the driver simple or flexible is also questioned. This is because that it's important to make a driver that is policy-free as possible and not restrictive \cite{rubini_linux_2001}. 

@@ -1,0 +1,26 @@
+\chapter{Usage}
+The driver usage example can be found in \verb'i2c_app.c'. This app will display a text ``TEMPERATURE: '' and the temperature in celsius. A library \verb'sys\ioctl' must be included first to use the modules. Each module then must be open first to allow access of using the drivers. After using the module it is advised to close the module using its file descriptor fd.
+
+\section{TMP102}
+You can only read data from TMP102 which will return the temperature measured. This can be achieved using following code:
+
+\begin{lstlisting}
+read(fd, buf, 100);
+\end{lstlisting}
+
+The variable buf must be a string or precisely an array of char. The variable fd is the file descriptor for TMP102 which is \verb'/dev/temp_device'. The int variable 100 indicate the size of char. The string of temperature from the module will be written on the buf.
+
+\section{SH1107}
+SH1107 is meant to be an output device, where an app can write data on it, thus producing a text. This can be achieved using following code:
+
+\begin{lstlisting}
+strcpy(buf, "\nTEMPERATURE :10.00 ~C");
+write(fd, buf, strlen(buf) + 1);
+\end{lstlisting}
+
+The array of char buf must be occupied with string first which is by using C library strcpy. To see the font and character capable written by this driver, look at the file \verb'font.h'. In addition to these font there is some unique escape character implemented by this driver such as:
+
+\begin{itemize}
+\item \verb'\n' is to go to the next line
+\item \verb'\b' is to remove the last character
+\end{itemize}

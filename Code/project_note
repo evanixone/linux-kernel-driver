@@ -1,0 +1,47 @@
+#Project Display from Temp Sensor
+
+1. sudo i2cdetect -y 1
+
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- 3c -- -- -- 
+40: -- -- -- -- -- -- -- -- 48 -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                         
+
+
+2. https://cdn-learn.adafruit.com/downloads/pdf/adafruit-monochrome-1-12-in-128x128-oled.pdf
+3. https://cdn-learn.adafruit.com/assets/assets/000/094/580/original/SH1107_datasheet.pdf?1599165309    
+4. https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI
+5. https://www.displayfuture.com/Display/datasheet/controller/SH1107.pdf
+6. https://www.ti.com/lit/ds/symlink/tmp102.pdf?ts=1679329913014&ref_url=https%3A%2F%2Fwww.google.com%2F
+7. https://github.com/lexus2k/ssd1306
+8. https://embetronicx.com/tutorials/linux/device-drivers/ssd1306-i2c-linux-device-driver-using-raspberry-pi/
+9. ls -al /sys/bus/i2c/devices/.
+
+Thesis Idea
+
+1. Introduction
+	a. Purpose
+		- graphic kernel -> userspace 
+	b. overview
+2. Methods
+	a. Methodology
+	b. Challenges
+		- no float
+		- simple vs flexible
+		- limited source
+3. Hardware Description
+	a. TMP102
+	b. SH1107
+4. Software Usage
+	a. Installation and setup
+	b. Implementation
+		- TMP102
+		- SH1107
+	c. API
+
+

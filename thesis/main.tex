@@ -1,0 +1,29 @@
+\chapter{Introduction}
+Throughout the years the Linux system has gained massive attention do to its feature as a developer-friendly operating system and how accessible it is. And because of that, the rate of development of Linux device drivers has increased significantly allowing its users to configure their working environment more efficiently and ease the usage of Linux. Linux has now become a the go-to OS for most hardware including Raspberry Pi, which has its Operating System working under Linux. This documentation will provide the full details about the project of making Linux Kernel driver for an I2c sensor and OLED Display using Raspberry Pi.
+
+\section{Overview}
+Usually virtual memory is segregated into user space and kernel space in modern computer operating system. To handle communication from user space and kernel, a device driver is needed. A device driver is a piece of software interface to allow operating system or any software called user space applications to access and communicate with the hardware without any prior information about the hardware. A user space application is in the other hand, a software in the user space that uses this device driver to communicate with the hardware.The layers of communication between user application can be displayed as following figure Table~\ref{tab:table1}.
+
+In this project, this mentioned hardware are an OLED Display SH1107 and an I2C temperature sensor TMP102. Linux distinguish three types of device which are character devices, block devices and network interfaces. The mentioned hardware are in the category of character devices and therefore classifiable as a char module. This character devices will usually implements open, close, read and write system calls \cite{rubini_linux_2001}
+. In this category, there are slow devices, which manage a small amount of data, and access to data does not require frequent seek queries. Examples are devices such as keyboard, mouse, serial ports, sound card, joystick. In general, operations with these devices (read, write) are performed sequentially byte by byte \url{https://linux-kernel-labs.github.io/refs/heads/master/labs/device_drivers.html}. \\
+
+
+\section{Purpose}
+This purpose of this document is to provide the project report and as a documentation for the software created, especially of its usage. It will also provide simple information on how the hardware works with the software as further information can be read from the data sheets instead. The purpose of the project is to develop drivers to allow the data of the temperature from I2C Sensor TMP102 and write onto the OLED Display 128x128 SH1107 as text on the display. Furthermore, to allow data from the sensor to be written onto the display, a userspace application is created.
+
+While there are already a lot of drivers for SH1107 display exist in internet, this light-weighted driver is solely focus on writing text on the Display. This can only achieved as simple as use write calls with text inside it. The TMP102 driver also has an easy code implementation. In addition this project provide a basic completed drivers code with good memory management for any developers who needs them as a start for their own project. Therefore, the source codes is licensed under generous GNU allowing anyone to modify or copy them.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+	\centering
+\begin{tabular}{|lllll|}
+	\hline
+	\multicolumn{1}{|l|}{\multirow{2}{*}{User Space}} & 					\multicolumn{4}{l|}{User Application} \\ \cline{2-5} 
+	\multicolumn{1}{|l|}{}                            & 					\multicolumn{4}{l|}{C Library}        \\ \hline
+	\multicolumn{1}{|l|}{Linux kernel}                & 					\multicolumn{4}{l|}{Drivers}          \\ \hline
+	\multicolumn{5}{|c|}{Hardware}                                                            	\\ \hline
+\end{tabular}
+\caption{Table represents the overview of layers in Linux}
+\label{tab:table1}
+\end{table}

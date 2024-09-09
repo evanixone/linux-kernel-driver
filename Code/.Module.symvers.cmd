@@ -1,0 +1,1 @@
+cmd_/home/nb20429/Documents/linux-kernel-driver/Code/Module.symvers :=  sed 's/ko$$/o/'  /home/nb20429/Documents/linux-kernel-driver/Code/modules.order | scripts/mod/modpost -m -a    -o /home/nb20429/Documents/linux-kernel-driver/Code/Module.symvers -e -i Module.symvers -T - 

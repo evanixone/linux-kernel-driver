@@ -1,0 +1,9 @@
+@article{mankar2014review,
+  title={Review of I2C protocol},
+  author={Mankar, Jayant and Darode, Chaitali and Trivedi, Komal and Kanoje, Madhura and Shahare, Prachi},
+  journal={International Journal of Research in Advent Technology},
+  volume={2},
+  number={1},
+  year={2014},
+  publisher={Citeseer}
+}

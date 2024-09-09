@@ -1,0 +1,1 @@
+cmd_/home/nb20429/Documents/linux-kernel-driver/Code/temp_driver.ko := ld -r -EL -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/nb20429/Documents/linux-kernel-driver/Code/temp_driver.ko /home/nb20429/Documents/linux-kernel-driver/Code/temp_driver.o /home/nb20429/Documents/linux-kernel-driver/Code/temp_driver.mod.o;  true

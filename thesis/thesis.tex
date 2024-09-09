@@ -1,0 +1,91 @@
+\documentclass[a4paper]{scrbook}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{relsize}
+\usepackage{hyperref}
+\usepackage{tgtermes}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage{color}
+
+\lstset{frame=tb,
+  language=c++,
+  aboveskip=5mm,
+  belowskip=5mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{blue},
+  keywordstyle=\color{red},
+  commentstyle=\color{pink}\string,
+  stringstyle=\color{green},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Replace these values
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thesistitleDE}{Linux-Kernel-Treiber\\I2C Sensor und OLED Display}
+\newcommand{\thesistitleEN}{Linux Kernel Driver\\I2C Sensor and OLED Display}
+\newcommand{\student}{Nik Amir Syazwan Bin Abdul Aziz}
+\newcommand{\matrnr}{00819429}
+\newcommand{\stammnr}{00819429}
+\newcommand{\submissiondate}{02.\ Juli 2023}
+\newcommand{\supervisor}{Herr Tobias Gent}
+\newcommand{\secsupervisor}{Herr Sergej Lamert}
+\newcommand{\faculty}{Angewandte Informatik}
+
+\newcommand{\studies}{Bachelor Angewandte Informatik}
+
+\newcommand{\degree}{Bachelor of Engineering (B.Eng.)}
+
+\renewcommand*{\UrlFont}{\ttfamily\smaller\relax}
+
+\begin{document}
+\pagestyle{headings}
+\pagenumbering{roman}
+\input{title}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+As the usage of Linux becoming more popular in recent years, the development of linux drivers has improved significantly to
+help and ease the users around the world. These drivers can be as simple as hardware driver for basic computer device
+such as mouse, keyboard to much more complicated devices such as microprocessor and microcontroller for developers. The present 
+report aims to outline the design, development, and implementation of a Linux kernel driver for I2C (Inter-Integrated Circuit) sensors 
+
+The report begins by providing an overview of I2C communication and its significance in connecting various devices, especially 
+sensors, to a Linux-based system. The characteristics and advantages of I2C bus architecture are discussed, emphasizing its 
+suitability for sensor applications. The subsequent sections delve into the methodology employed for designing and implementing 
+the Linux kernel driver for I2C sensors. The driver development process involves understanding the hardware specifications of the target sensor, 
+defining necessary data structures and functions, and integrating them into the Linux kernel source code.
+
+Additionally, the report discusses the challenges encountered during the driver development process, including data type problem, time management issues and 
+lack of experience issue. The solutions and workarounds implemented to overcome these challenges are presented, 
+highlighting the critical thinking and problem-solving skills employed.
+
+In conclusion, the development and implementation of a Linux kernel driver for I2C sensors presented in this report provide a solid foundation 
+for seamless integration and efficient utilization of I2C sensors within Linux-based systems.
+
+
+\tableofcontents
+
+\cleardoublepage%
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\input{main}
+\input{methodology}
+\input{hardware}
+\input{software}
+\input{usage}
+\input{conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
